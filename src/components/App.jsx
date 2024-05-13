@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Feedback from './feedback/Feedback';
 import styles from './App.module.css';
 
- const App = () => {
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div className={styles.appContainer}
@@ -16,8 +23,11 @@ import styles from './App.module.css';
         color: '#010101',
       }}
     >
-      <Feedback />
-
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <Feedback />
+      )}
     </div>
   );
 };
