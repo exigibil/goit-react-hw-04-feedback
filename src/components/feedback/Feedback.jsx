@@ -20,10 +20,10 @@ function Feedback() {
       }));
     };
   
-    const totalFeedback = feedbackState.good + feedbackState.neutral + feedbackState.bad;
+    const { good, neutral, bad } = feedbackState;
+    const totalFeedback = good + neutral + bad;
     const positivePercentage =
-    totalFeedback > 0 ? ((feedbackState.good / totalFeedback) * 100).toFixed(2) : 0;
-  
+      totalFeedback > 0 ? ((good / totalFeedback) * 100).toFixed(2) : 0;
 
   return (
     <div className={styles.feedbackContainer}>
@@ -36,11 +36,11 @@ function Feedback() {
         <NotificationMessage />
       ) : (
         <Statistics
-        good={feedbackState.good}
-        neutral={feedbackState.neutral}
-        bad={feedbackState.bad}
-        total={totalFeedback}
-        positivePercentage={positivePercentage}
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={totalFeedback}
+          positivePercentage={positivePercentage}
         />
       )}
     </div>

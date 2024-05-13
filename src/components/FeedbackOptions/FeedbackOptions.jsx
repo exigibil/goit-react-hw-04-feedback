@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './FeedbackOptions.module.css';
 
-function FeedbackButtons({ onLeaveFeedback }) {
-  const handleClick = option => {
+const FeedbackButtons = ({ onLeaveFeedback }) => {
+  const handleClick = (option) => {
     onLeaveFeedback(option);
   };
 

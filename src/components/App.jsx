@@ -2,7 +2,7 @@ import React from 'react';
 import Feedback from './feedback/Feedback';
 import styles from './App.module.css';
 
-export const App = () => {
+ const App = () => {
 
 
   return (
@@ -18,7 +18,8 @@ export const App = () => {
     >
       <Feedback />
 
-     
     </div>
   );
 };
+
+export default App;
