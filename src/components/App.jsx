@@ -6,12 +6,12 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate data fetching delay
+
     const timeout = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
 
-    // Cleanup function
+
     return () => clearTimeout(timeout);
   }, []);
 
